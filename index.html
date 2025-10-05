@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>AIUB CGPA Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="aiub-logo.png" alt="AIUB Logo" class="logo">
+    <h1>AIUB CGPA Portal</h1>
+  </header>
+
+  <main>
+    <!-- Role Selection -->
+    <section id="roleSelection">
+      <button onclick="selectRole('new')">New User</button>
+      <button onclick="selectRole('member')">Member</button>
+      <button onclick="selectRole('owner')">Owner</button>
+    </section>
+
+    <!-- New User Form -->
+    <section id="newUserForm" class="hidden">
+      <h2>Create New Account</h2>
+      <input type="text" id="newUserName" placeholder="Enter your name">
+      <input type="password" id="newUserPass" placeholder="Enter a password">
+      <button onclick="createNewUser()">Create Account</button>
+      <button onclick="goBack()" class="back-btn">Back</button>
+    </section>
+
+    <!-- Member Login -->
+    <section id="memberLogin" class="hidden">
+      <h2>Member Login</h2>
+      <select id="memberSelect"></select>
+      <input type="password" id="memberPass" placeholder="Enter password">
+      <button onclick="loginMember()">Login</button>
+      <button onclick="goBack()" class="back-btn">Back</button>
+    </section>
+
+    <!-- Owner Login -->
+    <section id="ownerLogin" class="hidden">
+      <h2>Owner Login</h2>
+      <input type="password" id="ownerPassInput" placeholder="Enter owner password">
+      <button onclick="loginOwner()">Login</button>
+      <button onclick="goBack()" class="back-btn">Back</button>
+    </section>
+
+    <!-- CGPA Portal -->
+    <section id="cgpaPortal" class="hidden">
+      <h2 id="welcomeUser"></h2>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+      <button onclick="goBack()" class="back-btn">Back</button>
+      <div class="portal-buttons">
+        <button onclick="addSemester()">Add Semester</button>
+      </div>
+      <div id="semesters"></div>
+      <div id="overallCGPA" class="result"></div>
+
+      <!-- Owner Members List -->
+      <div id="ownerMembersList" class="hidden">
+        <h3>All Members:</h3>
+        <div id="allMembers"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built by <strong>Iftakhar Rahi</strong> © 2025
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
